@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "Bluu Next Cyrillic";
+  src: url("../fonts/Bluu-Next-Cyrillic.ttf");
+  format: ("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/inter-v20-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/inter-v20-latin-regular.woff2") format("woff2");
+}
+
+/* Base */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-main-color: #fabf59;
+  --color-secondary-color: #1d1d1d;
+  --color-main-light-color: #ffffff;
+}
+
+body {
+  font-family: "Bluu Next Cyrillic", sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Hero section */
+
+.hero-section {
+  padding: 100px 298px 80px;
+  background-image: url(../images/main-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 740px;
+  width: 100%;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--color-main-color);
+  padding-bottom: 80px;
+}
+
+/* Main Button */
+
+.main-button {
+  display: block;
+  width: 320px;
+  height: 60px;
+  margin: 0 auto 253px;
+  font-size: 18px;
+  background-color: var(--color-main-color);
+  color: var(--color-secondary-color);
+  border: none;
+  border-radius: 100px;
+}
+
+/* Cards */
+
+.main-cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-image {
+  border-radius: 26px;
+}
+
+.cards-button {
+  width: 320px;
+  height: 59px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  color: var(--color-main-color);
+  background-color: transparent;
+  border: 1px solid var(--color-main-color);
+  border-radius: 100px;
+}
+
+/* Student section */
+
+.student-section {
+  padding: 100px 130px;
+  background-color: var(--color-secondary-color);
+  width: 100%;
+}
+
+.students-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.student-card {
+  position: relative;
+  overflow: hidden;
+  width: 295px;
+  height: 452px;
+  border-radius: 30px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc((100% - 60px) / 4);
+}
+
+.student-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to top,
+    #0f0f0f -0.99%,
+    rgba(15, 15, 15, 0.74) 51.85%,
+    rgba(15, 15, 15, 0) 86.04%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.student-card-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  color: var(--color-main-light-color);
+}
+
+.student-card-text {
+  position: absolute;
+  z-index: 2;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--color-main-color);
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+}
+
+.student-card-inform {
+  font-weight: 500;
+  font-size: 16;
+  color: var(--color-main-light-color);
+}
+
+.student-card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
