@@ -85,6 +85,21 @@ a {
 .main-cards {
   display: flex;
   gap: 20px;
+  opacity: 1;
+  visibility: visible;
+  transform: translatex(0);
+
+  transition:
+    opasity 0.5s,
+    transform 0.5s,
+    visibility 0.5s;
+}
+
+.main-cards.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(20px);
+  pointer-events: none;
 }
 
 .card {
@@ -174,7 +189,7 @@ a {
   z-index: 2;
 }
 
-.student-card-inform {
+.card-inform {
   font-weight: 500;
   font-size: 16;
   color: var(--color-main-light-color);
@@ -190,4 +205,59 @@ a {
   height: 100%;
   object-fit: cover;
   border-radius: 30px;
+}
+
+/* Teacher section */
+
+.teacher-section {
+  padding: 100px 130px;
+  background-color: var(--color-secondary-color);
+  width: 100%;
+}
+
+.teachers-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.teacher-card {
+  width: 295px;
+  height: 452px;
+  border: 1px solid var(--color-main-color);
+  border-radius: 30px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc((100% - 60px) / 4);
+  background:
+    linear-gradient(
+      179.32deg,
+      #0f0f0f -0.35%,
+      rgba(15, 15, 15, 0.74) 66.62%,
+      rgba(15, 15, 15, 0) 97.14%
+    ),
+    url(../images/teach-Minerva.jpg);
+}
+
+.teacher-card-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--color-main-color);
+}
+
+.teacher-card-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  color: var(--color-main-light-color);
+}
+
+/* Faculties section */
+
+.faculties-section {
+  padding: 100px 130px;
+  background-color: var(--color-secondary-color);
+  width: 100%;
 }
