@@ -1,6 +1,14 @@
-const btn = document.querySelector(".main-button");
-const cards = document.querySelector(".main-cards");
+const buttons = document.querySelectorAll(".faculty-button");
+const cardsFacult = document.querySelectorAll(".student-card, .teacher-card");
 
-btn.addEventListener("click", function () {
-  cards.classList.toggle("is-hidden");
+buttons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    cardsFacult.forEach(function (card) {
+      if (card.classList.contains(button.id)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
 });
