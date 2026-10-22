@@ -31,8 +31,10 @@
 
 :root {
   --color-main-color: #fabf59;
-  --color-secondary-color: #1d1d1d;
   --color-main-light-color: #ffffff;
+  --color-main-dark-color: #f9b50c;
+  --color-secondary-color: #1d1d1d;
+  --color-secondary-light-color: #d9d9d9;
 }
 
 body {
@@ -49,7 +51,7 @@ a {
 /* Hero section */
 
 .hero-section {
-  padding: 100px 298px 80px;
+  padding: 100px 0px 80px;
   background-image: url(../images/main-bg.jpg);
   background-size: cover;
   background-position: center;
@@ -78,16 +80,17 @@ a {
   color: var(--color-secondary-color);
   border: none;
   border-radius: 100px;
+  cursor: pointer;
 }
 
 /* Cards */
 
 .main-cards {
   display: flex;
+  justify-content: center;
   gap: 20px;
   opacity: 1;
   visibility: visible;
-  transform: translatex(0);
 
   transition:
     opasity 0.5s,
@@ -98,7 +101,6 @@ a {
 .main-cards.is-hidden {
   opacity: 0;
   visibility: hidden;
-  transform: translate(20px);
   pointer-events: none;
 }
 
@@ -124,6 +126,34 @@ a {
   background-color: transparent;
   border: 1px solid var(--color-main-color);
   border-radius: 100px;
+}
+
+.card-info {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  font-size: 14px;
+  background-color: var(--color-secondary-color);
+  color: var(--color-main-light-color);
+  padding: 20px;
+  border-radius: 30px;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+}
+
+.card-info span {
+  color: var(--color-main-color);
+}
+
+.student-card-text:has(.card-inform:hover) ~ .card-info,
+.teacher-card-text:has(.card-inform:hover) ~ .card-info,
+.card-info:hover {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Student section */
@@ -299,4 +329,47 @@ a {
   padding: 100px 130px;
   background-color: var(--color-secondary-color);
   width: 100%;
+}
+
+.faculty-title {
+  margin-bottom: 70px;
+}
+
+.faculty-icon {
+  width: 35px;
+  height: 38px;
+  flex-shrink: 0;
+}
+
+.faculty-buttons {
+  display: flex;
+  border: 1px solid var(--color-secondary-light-color);
+  border-radius: 100px;
+  margin-bottom: 50px;
+  min-width: 1240px;
+  min-height: 59px;
+}
+
+.faculty-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: 100px;
+  flex-grow: 1;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-main-light-color);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.faculty-button.active {
+  background-color: var(--color-main-dark-color);
+  color: var(--color-secondary-color);
 }
